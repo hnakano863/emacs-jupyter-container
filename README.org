@@ -2,13 +2,17 @@
 Use containerized Jupiter kernel from org-babel with emacs-jupyter &amp; docker.el
 
 * Demo
-#+begin_src jupyter-python
+#+begin_src org
+,#+begin_src jupyter-python
 import sys
-sys.executable  #it uses a local executable
+sys.executable  #Use a local executable
+,#+end_src
 #+end_src
 
-#+RESULTS:
+#+begin_src org
+,#+RESULTS:
 : /Users/hiroshi/.julia/conda/3/bin/python
+#+end_src
 
 #+begin_src elisp
 (jupyter-container-org-run-hook) ;Run container
@@ -17,13 +21,17 @@ sys.executable  #it uses a local executable
 #+RESULTS:
 : /docker:jupyter:/home/jovyan/conn.json
 
-#+begin_src jupyter-python
+#+begin_src org
+,#+begin_src jupyter-python
 import sys
-sys.executable  #switch to a container executable
+sys.executable  #Switch to a container executable
+,#+end_src
 #+end_src
 
-#+RESULTS:
-: /opt/conda/bin/python
+#+begin_src org
+,#+RESULTS:
+: /Users/hiroshi/.julia/conda/3/bin/python
+#+end_src
 
 #+begin_src elisp
 (jupyter-container-org-kill-hook) ;Kill container
@@ -32,9 +40,13 @@ sys.executable  #switch to a container executable
 #+RESULTS:
 : py
 
-#+begin_src jupyter-python
+#+begin_src org
+,#+begin_src jupyter-python
 sys.executable  #Use a local executable again
+,#+end_src
 #+end_src
 
-#+RESULTS:
+#+begin_src org
+,#+RESULTS:
 : /Users/hiroshi/.julia/conda/3/bin/python
+#+end_src
