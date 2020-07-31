@@ -14,12 +14,9 @@ sys.executable  #Use a local executable
 : /Users/hiroshi/.julia/conda/3/bin/python
 #+end_src
 
-#+begin_src elisp
+#+begin_src elisp :results silent
 (jupyter-container-org-run-hook) ;Run container
 #+end_src
-
-#+RESULTS:
-: /docker:jupyter:/home/jovyan/conn.json
 
 #+begin_src org
 ,#+begin_src jupyter-python
@@ -30,15 +27,17 @@ sys.executable  #Switch to a container executable
 
 #+begin_src org
 ,#+RESULTS:
+: /opt/conda/bin/python
+#+end_src
+
+#+begin_src org
+,#+RESULTS:
 : /Users/hiroshi/.julia/conda/3/bin/python
 #+end_src
 
-#+begin_src elisp
+#+begin_src elisp :results silent
 (jupyter-container-org-kill-hook) ;Kill container
 #+end_src
-
-#+RESULTS:
-: py
 
 #+begin_src org
 ,#+begin_src jupyter-python
