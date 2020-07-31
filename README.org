@@ -1,0 +1,40 @@
+#+TITLE: emacs-jupyter-container
+Use containerized Jupiter kernel from org-babel with emacs-jupyter &amp; docker.el
+
+* Demo
+#+begin_src jupyter-python
+import sys
+sys.executable  #it uses a local executable
+#+end_src
+
+#+RESULTS:
+: /Users/hiroshi/.julia/conda/3/bin/python
+
+#+begin_src elisp
+(jupyter-container-org-run-hook) ;Run container
+#+end_src
+
+#+RESULTS:
+: /docker:jupyter:/home/jovyan/conn.json
+
+#+begin_src jupyter-python
+import sys
+sys.executable  #switch to a container executable
+#+end_src
+
+#+RESULTS:
+: /opt/conda/bin/python
+
+#+begin_src elisp
+(jupyter-container-org-kill-hook) ;Kill container
+#+end_src
+
+#+RESULTS:
+: py
+
+#+begin_src jupyter-python
+sys.executable  #Use a local executable again
+#+end_src
+
+#+RESULTS:
+: /Users/hiroshi/.julia/conda/3/bin/python
